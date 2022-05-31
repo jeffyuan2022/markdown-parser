@@ -66,6 +66,9 @@ public class MarkdownParse {
             // The close paren we need may not be the next one in the file
             // Track opening parens and find matching close paren
             int closeParen = findCloseParen(markdown, openParen);
+            if (closeParen == -1){
+                break;
+            }
             
             if(nextOpenBracket == -1 || nextCloseBracket == -1
                   || closeParen == -1 || openParen == -1) {
