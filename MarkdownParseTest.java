@@ -58,10 +58,9 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testMissingCloseParen() throws IOException {
-        String contents = Files.readString(Path.of("test-missing-paren-plus-test-file2.md"));
-        List<String> expect = List.of();
-        assertEquals(MarkdownParse.getLinks(contents), expect);
+    public void snippetCheck3() throws IOException {
+        String contents = Files.readString(Path.of("Snippet3.md"));
+        List<String> expect = List.of("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+        assertEquals(expect, MarkdownParse.getLinks(contents));
     }
-    
 }
